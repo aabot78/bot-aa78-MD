@@ -300,7 +300,7 @@ ${groupName}`})
                  let teks = `⬣ *GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await XeonBotInc.groupMetadata(i)
-                     teks += `⬡ *Name :* ${metadata.subject}\n⬡ *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Made :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                  teks += `⬡ *Name :* ${metadata.subject}\n⬡ *ID :* ${metadata.id}\n────────────────\n` 
                  }
                  XeonBotInc.sendTextWithMentions(m.chat, teks, m)
              }
