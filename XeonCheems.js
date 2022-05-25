@@ -264,7 +264,7 @@ ${groupName}`})
 
 *By :* ${m.pushName}
 *Cause :* ${q ? q : 'blank'}`
-            XeonBotInc.sendMessage(m.chat, { text : tagall , mentions: participants.map(a => a.id)}, { quoted: m })
+            XeonBotInc.sendMessage(m.chat, { text : tagall , mentions: participants.map(a => a.id)})
             }
             break
     case prefix+'antilink':
