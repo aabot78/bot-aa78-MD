@@ -66,7 +66,7 @@ async function startXeonBotInc() {
             let metadata = await XeonBotInc.groupMetadata(anu.id)
             let participants = anu.participants
             for (let num of participants) {
-              let numcode = (num.startsWith(233) || (num.startsWith(55)))
+            let numcode = (num.startsWith(91) || (num.startsWith(92)))
 //═══════[get profile pic]════════\\
                 try {
                     ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
