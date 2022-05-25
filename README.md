@@ -1,4 +1,4 @@
-<h1 align="center">ꪶ𝗖𝗵𝗲𝗲𝗺𝘀 𝗕𝗼𝘁-𝗠𝗗ꫂ<br></h1>
+<h1 align="center">ꪶ 𝗔𝗔-𝗕𝗢𝗧-𝗠𝗗 ꫂ<br></h1>
 <p align="center">
   <img src="https://telegra.ph/file/92b62466c2ef493a72072.jpg" width="540" height="300" />
 </p>
@@ -66,7 +66,7 @@ https://github.com/DuckyTeam/heroku-buildpack-imagemagick
 heroku/nodejs
 ```
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aabot78/CheemsBot-MD/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aabot78/bot-aa78-md/)
 
 # Install Manually 👇
 ## `Requirements`
