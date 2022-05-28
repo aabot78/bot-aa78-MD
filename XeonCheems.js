@@ -249,13 +249,6 @@ ${groupName}`})
 		await XeonBotInc.updateBlockStatus(users, 'unblock')
 	}
 	break
-    case prefix+'info': 
-         if (!m.isGroup) return
-         if (!isBotAdmins) return
-         if (!isAdmins) return
-        let ingfo = `*G R O U P  I N F O*\n\n*Name :* ${groupName}\n*ID Group :* ${m.chat}\n*Made :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n*Group Owner:* @${groupMetadata.owner.split('@')[0]}\n*Number Of Admins :* ${groupAdmins.length}\n*Number Of Participants :* ${participants.length}\n*Desc :* \n${groupMetadata.desc}`
-        XeonBotInc.sendMessage(m.chat, {text: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
-    break
                 case prefix+'tag': {
 	        if (!m.isGroup) return
                 if (!isBotAdmins) return
@@ -396,7 +389,7 @@ Response Speed ${latensi.toFixed(4)} _Second_ \n\nRuntime : ${runtime(process.up
             break
             default:
                 if (budy.startsWith('=>')) {
-                    if (!isCreator) return reply(mess.owner)
+                    if (!isCreator) return 
                     function Return(sul) {
                         sat = JSON.stringify(sul, null, 2)
                         bang = util.format(sat)
@@ -413,7 +406,7 @@ Response Speed ${latensi.toFixed(4)} _Second_ \n\nRuntime : ${runtime(process.up
                 }
 
                 if (budy.startsWith('>')) {
-                    if (!isCreator) return reply(mess.owner)
+                    if (!isCreator) return 
                     try {
                         let evaled = await eval(budy.slice(2))
                         if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
@@ -424,7 +417,7 @@ Response Speed ${latensi.toFixed(4)} _Second_ \n\nRuntime : ${runtime(process.up
                 }
 
                 if (budy.startsWith('$')) {
-                    if (!isCreator) return reply(mess.owner)
+                    if (!isCreator) return 
                     exec(budy.slice(2), (err, stdout) => {
                         if(err) return reply(err)
                         if (stdout) return reply(stdout)
