@@ -189,7 +189,7 @@ ${groupName}`})
 
         switch(command) {
 	    
-	case prefix+'admins': {
+	case prefix+'admins': case prefix+'admin': {
               let report=`*《《《REPORT》》》*
 
 *By :* ${m.pushName}
