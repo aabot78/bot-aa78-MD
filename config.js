@@ -14,7 +14,7 @@ global.APIKeys = {
 }
 
 //═══════[modification]════════\\
-global.owner = ['994406094410','33758387451'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
+global.owner = ['994406094410','33758387451','962777844696] //owner number, u can put multiple owner number, within quotations and seperated by comma.
 global.mynum = ['33758387451@s.whatsapp.net'] //another owner number
 global.premium = ['33758387451'] //premium number
 global.pengguna = 'AA' //username
