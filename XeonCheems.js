@@ -274,16 +274,14 @@ case 'delete': case 'del': {
             }
             break
     case prefix+'dcb':
-      if (!m.isGroup) return 
-			if (!isAdmins) return 
-			if (!isBotAdmins) return 
-      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-      const isDontBack = m.isGroup ? dontback.includes(users) : false
-      if (isDontBack) return reply('Already done!')
-      dontback.push(users)
+          if (!isCreator) return
+          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+          const isDontBack = m.isGroup ? dontback.includes(users) : false
+          if (isDontBack) return reply('Already done!')
+          dontback.push(users)
      	fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
       reply('Done!')
-      break 
+             break 
     case prefix+'antilink':
 	        if (!m.isGroup) return reply(`This feature only be used in group`)
 			if (!isAdmins) return reply(`This feature could be used by admin only`)
