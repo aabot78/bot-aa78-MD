@@ -273,7 +273,7 @@ case 'delete': case 'del': {
             XeonBotInc.sendMessage(m.chat, { text : tagall , mentions: participants.map(a => a.id)})
             }
             break
-    case prefix+'db':
+    case prefix+'dcb':
       if (!m.isGroup) return 
 			if (!isAdmins) return 
 			if (!isBotAdmins) return 
