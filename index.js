@@ -95,7 +95,7 @@ await XeonBotInc.updateBlockStatus(num, 'block')
                   }
                   if (dontback.includes(num)) {
 await XeonBotInc.groupParticipantsUpdate(anu.id, [num], 'remove')
-                  XeonBotInc.sendMessage(...global.mynum, {text: `${metadata.subject} ${num} Don't come back removed`})
+                  XeonBotInc.sendMessage(...global.mynum, {text: `${metadata.subject} ${num} Don't come back removed 🚫🚫🚫`})
 		  }
                    if (welcome.includes(anu.id) & !numcode) {
                  const welmess = await XeonBotInc.sendMessage(anu.id, { contextInfo: { mentionedJid: [num] },text:`Welcome To ${metadata.subject} @${num.split("@")[0]} 
