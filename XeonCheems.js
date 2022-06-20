@@ -273,15 +273,27 @@ case 'delete': case 'del': {
             XeonBotInc.sendMessage(m.chat, { text : tagall , mentions: participants.map(a => a.id)})
             }
             break
-    case prefix+'dcb':
-          if (!isCreator) return
-          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-          const isDontBack = m.chat ? dontback.includes(users) : false
-          if (isDontBack) return reply('Already done!')
-          dontback.push(users)
-     	fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
-      reply('Done!')
-             break 
+case prefix+'dcb':{
+      if (!isCreator) return 
+      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+      const isDontBack = m.isGroup ? dontback.includes(users) : false
+      if (isDontBack) return reply('This Number Is Already Banned!')
+      dontback.push(users)
+fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
+      reply('Number Banned Successfully!')
+    }		
+      break
+			
+case prefix+'dcbr':
+      if (!isCreator) return 
+      let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+      const isDontBack = m.isGroup ? dontback.includes(users) : false
+      if (!isDontBack) return reply('Already removed!')
+      var dcbremove = dontback.indexOf(users)
+      dontback.splice(dcbremove,1)
+      fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
+      reply('Number Removed!')
+      break	
     case prefix+'antilink':
 	        if (!m.isGroup) return reply(`This feature only be used in group`)
 			if (!isAdmins) return reply(`This feature could be used by admin only`)
