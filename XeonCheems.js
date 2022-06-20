@@ -26,7 +26,6 @@ let xeon = fs.readFileSync('./XeonMedia/cheemspic.jpg')
 
 //[database]\\
 const antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
-const dontback = JSON.parse(fs.readFileSync('./database/dontback.json'))
 const antiwalink = JSON.parse(fs.readFileSync('./database/antiwalink.json'))
 const stickergroup = JSON.parse(fs.readFileSync('./database/stickergroup.json'))
 
