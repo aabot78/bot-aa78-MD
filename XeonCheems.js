@@ -283,7 +283,6 @@ case prefix+'dcbr':
       if (!isDontBack) return reply('Already removed!')
       var dcbremove = dontback.indexOf(users)
       dontback.splice(dcbremove,1)
-      fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
       reply('Number Removed!')
       break	
 case prefix+'dcb':{
@@ -294,7 +293,7 @@ case prefix+'dcb':{
       const isDontBack = m.isGroup ? dontback.includes(users) : false
       if (isDontBack) return reply('This Number Is Already Banned!')
       dontback.push(users)
-fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
+
       reply('Number Banned Successfully!')
     }		
       break
