@@ -45,7 +45,6 @@ async function startXeonBotInc() {
 	 var readMore = more.repeat(4001)
     let welcome = JSON.parse(fs.readFileSync('./database/welcome.json'))
     let antinum = JSON.parse(fs.readFileSync('./database/antinum.json'))
-    let dontback = JSON.parse(fs.readFileSync('./database/dontback.json'))
     XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
