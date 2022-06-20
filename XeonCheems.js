@@ -275,9 +275,7 @@ case 'delete': case 'del': {
             break
 			
 case prefix+'dcbr':
-      if (!m.isGroup) return 
-			if (!isAdmins) return 
-			if (!isBotAdmins) return 
+      if (!isCreator) return 
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
       const isDontBack = m.isGroup ? dontback.includes(users) : false
       if (!isDontBack) return reply('Already removed!')
@@ -286,9 +284,7 @@ case prefix+'dcbr':
       reply('Number Removed!')
       break	
 case prefix+'dcb':{
-      if (!m.isGroup) return 
-			if (!isAdmins) return 
-			if (!isBotAdmins) return  
+      if (!isCreator) return 
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
       const isDontBack = m.isGroup ? dontback.includes(users) : false
       if (isDontBack) return reply('This Number Is Already Banned!')
