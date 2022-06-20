@@ -4,7 +4,6 @@
 
 //═══════[modules]════════\\
 require('./config')
-require('./database/dontback')
 const { default: XeonBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
@@ -45,6 +44,7 @@ async function startXeonBotInc() {
 	 var readMore = more.repeat(4001)
     let welcome = JSON.parse(fs.readFileSync('./database/welcome.json'))
     let antinum = JSON.parse(fs.readFileSync('./database/antinum.json'))
+    /*const dontback = JSON.parse(fs.readFileSync('./database/dontback.json'))*/
     XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
