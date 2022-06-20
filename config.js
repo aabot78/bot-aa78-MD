@@ -14,7 +14,7 @@ global.APIKeys = {
 }
 ///////////DON'T COME BACK////////////
 
-global.dontback = []
+global.dontback = ['5491158354313@s.whatsapp.net','48606325521@s.whatsapp.net']
 
 
 //═══════[modification]════════\\
