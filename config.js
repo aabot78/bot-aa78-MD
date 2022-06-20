@@ -12,12 +12,15 @@ global.APIs = {
 global.APIKeys = {
 	'https://zenzapi.xyz': '805a6c3fa9', //thank you to zenz
 }
+///////////DON'T COME BACK////////////
+
+global.dontback = []
+
 
 //═══════[modification]════════\\
 global.owner = ['994406191197','33758387451','962777844696'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
 global.mynum = ['33758387451@s.whatsapp.net'] //another owner number
 global.premium = ['33758387451'] //premium number
-global.dontback = []
 global.pengguna = 'AA' //username
 global.botnma = 'AA' //bot name
 global.ownernma = 'AA' //owner name
