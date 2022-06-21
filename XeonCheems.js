@@ -277,7 +277,7 @@ case 'delete': case 'del': {
 case prefix+'dcbr':
       if (!isCreator) return 
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-      const isDontBack = m.isGroup ? dontback.includes(users) : false
+      const isDontBack = m.chat ? dontback.includes(users) : false
       if (!isDontBack) return reply('Already removed!')
       var dcbremove = dontback.indexOf(users)
       dontback.splice(dcbremove,1)
@@ -287,7 +287,7 @@ case prefix+'dcbr':
 case prefix+'dcb':{
       if (!isCreator) return 
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-      const isDontBack = m.isGroup ? dontback.includes(users) : false
+      const isDontBack = m.chat ? dontback.includes(users) : false
       if (isDontBack) return reply('This Number Is Already Banned!')
       dontback.push(users)
       fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
