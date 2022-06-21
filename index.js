@@ -26,8 +26,8 @@ async function startXeonBotInc() {
         printQRInTerminal: true,
         browser: ['AA','Safari','1.0.0'],
         auth: state,
+	
 	defaultQueryTimeoutMs: undefine
-        version
     })
     store.bind(XeonBotInc.ev)
     
