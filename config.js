@@ -12,9 +12,6 @@ global.APIs = {
 global.APIKeys = {
 	'https://zenzapi.xyz': '805a6c3fa9', //thank you to zenz
 }
-///////////DON'T COME BACK////////////
-
-global.dontback = ['5491158354313@s.whatsapp.net','48606325521@s.whatsapp.net']
 
 
 //═══════[modification]════════\\
