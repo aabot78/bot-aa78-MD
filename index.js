@@ -68,6 +68,7 @@ async function startXeonBotInc() {
             let participants = anu.participants
             for (let num of participants) {
             let numcode = (num.startsWith(91) || (num.startsWith(92)))
+	   const dontback = JSON.parse(fs.readFileSync('./database/dontback.json'))
 //═══════[get profile pic]════════\\
                /* try {
                     ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
