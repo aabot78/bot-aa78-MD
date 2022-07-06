@@ -79,6 +79,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
+	const from = mek.key.remoteJid
         const mime = (quoted.msg || quoted).mimetype || ''
 	const isMedia = /image|video|sticker|audio/.test(mime)
 	
@@ -186,7 +187,12 @@ ${groupName}`})
             fs.writeFileSync('./src/database.json', JSON.stringify(global.db, null, 2))
         }, 60 * 1000)
 	    
-        
+        const reactionMessage = { 
+                   react: { 
+                     text: args[0], 
+                     key: { remoteJid: m.chat, fromMe: true, id: quoted.id } 
+                  } 
+              }
 
         switch(command) {
 	    
@@ -219,12 +225,15 @@ ${groupName}`})
 		if (!m.isGroup) return
                 if (!isBotAdmins) return
                 if (!isAdmins) return
+		XeonBotInc.sendMessage(from, { react: { text: `🫡`, key: m.key }})
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		let allchats = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
 		for (let i of allchats) {
 		  if (users === botNumber) return 
 		await XeonBotInc.groupParticipantsUpdate(i, [users], 'remove')
 		await XeonBotInc.updateBlockStatus(users, 'block')
+		await sleep(2000)
+		XeonBotInc.sendMessage(from, { react: { text: ``, key: m.key }})
 		}
 	}
 	break
