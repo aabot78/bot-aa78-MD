@@ -225,27 +225,23 @@ ${groupName}`})
 		if (!m.isGroup) return
                 if (!isBotAdmins) return
                 if (!isAdmins) return
-		XeonBotInc.sendMessage(from, { react: { text: `🫡`, key: m.key }})
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		let allchats = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
 		for (let i of allchats) {
 		  if (users === botNumber) return 
 		await XeonBotInc.groupParticipantsUpdate(i, [users], 'remove')
 		await XeonBotInc.updateBlockStatus(users, 'block')
-		await sleep(2000)
-		XeonBotInc.sendMessage(from, { react: { text: ``, key: m.key }})
 		}
 	}
 	break
     case prefix+'add': case prefix+'a': {
 		if (!m.isGroup) return
                 if (!isBotAdmins) return
-                if (!isAdmins) return
-	        XeonBotInc.sendMessage(from, { react: { text: `🫡`, key: m.key }})
+                if (!isAdmins) return              
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add')
-	        await sleep(2000)
-	     XeonBotInc.sendMessage(from, { react: { text: ``, key: m.key }})
+	       
+	     
 	}
 	break
     case prefix+'block': {
