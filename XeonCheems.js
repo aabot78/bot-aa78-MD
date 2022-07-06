@@ -241,8 +241,11 @@ ${groupName}`})
 		if (!m.isGroup) return
                 if (!isBotAdmins) return
                 if (!isAdmins) return
+	        XeonBotInc.sendMessage(from, { react: { text: `🫡`, key: m.key }})
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add')
+	        await sleep(2000)
+	     XeonBotInc.sendMessage(from, { react: { text: ``, key: m.key }})
 	}
 	break
     case prefix+'block': {
