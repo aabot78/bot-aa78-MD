@@ -239,9 +239,7 @@ ${groupName}`})
                 if (!isBotAdmins) return
                 if (!isAdmins) return              
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add')
-	       
-	     
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add')                 
 	}
 	break
     case prefix+'block': {
