@@ -156,7 +156,7 @@ ${m.pushName}`})
 
 //[Antilink]\\
 if (!isAntiLink && !isAdmins) {
-if (budy.match(/(https:\/)/gi) || (budy.match(/(http:\/)/gi) || (budy.match(/(wa.me\/)/gi) || (budy.match(/(.com\/)/gi))))) {
+if (budy.match(/(https:\/)/gi) || (budy.match(/(http:\/)/gi) || (budy.match(/(wa.me\/)/gi) || (budy.match(/(.co\/)/gi))))) {
 if (budy.match(`https://chat.whatsapp.com/${await
 XeonBotInc.groupInviteCode(m.chat)}`)) return
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
