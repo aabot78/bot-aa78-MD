@@ -290,7 +290,7 @@ case prefix+'dcbr':
       fs.writeFileSync('./database/dontback.json', JSON.stringify(dontback))
       reply('Number Removed!')
       break	
-case prefix+'dcb':{
+case prefix+'ban':{
 	if (!isBotAdmins) return
         if (!isAdmins) return
       let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
