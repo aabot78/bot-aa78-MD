@@ -221,10 +221,8 @@ ${groupName}`})
                 await XeonBotInc.groupLeave(m.chat)
             }
             break
-	if (!m.isGroup) return {
-	if (!isBotAdmins) return 
-	if (!isAdmins) return 
-	if (m.isGroup && isBotAdmins && isAdmins) {
+	case prefix+'remove': case prefix+'r': {
+	if (!m.isGroup && !isBotAdmins && !isAdmins) return {
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		let allchats = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
 		for (let i of allchats) {
