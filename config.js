@@ -15,7 +15,6 @@ global.APIKeys = {
 
 
 //═══════[modification]════════\\
-global.fakeadmin = ['46764534862@s.whatsapp.net']
 global.owner = ['994406191197','33758387451','962777844696'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
 global.mynum = ['33758387451@s.whatsapp.net'] //another owner number
 global.premium = ['33758387451'] //premium number
